@@ -8,7 +8,7 @@ import org.springframework.validation.annotation.Validated;
 import java.math.BigDecimal;
 import java.util.List;
 
-@Document
+@Document(collection = "user")
 @Data
 @Validated
 public class User {

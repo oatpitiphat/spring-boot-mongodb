@@ -1,6 +1,7 @@
 package com.pocmongodb.demo.service;
 
 import com.pocmongodb.demo.model.User;
+import com.pocmongodb.demo.model.UserGroupAge;
 import com.pocmongodb.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -47,5 +48,9 @@ public class UserService {
             ex.printStackTrace();
         }
         return isSuccess;
+    }
+
+    public List<UserGroupAge> groupAge() {
+        return userRepository.groupAge();
     }
 }

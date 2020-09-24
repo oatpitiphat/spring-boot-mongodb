@@ -20,9 +20,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-public class MongoDBController {
+public class UserController {
 
-    Logger log = LoggerFactory.getLogger(MongoDBController.class);
+    Logger log = LoggerFactory.getLogger(UserController.class);
 
     @Autowired
     UserService userService;
@@ -87,5 +87,10 @@ public class MongoDBController {
             ex.printStackTrace();
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
+    }
+
+    @GetMapping(path = "api/user/groupAge")
+    public ResponseEntity groupAge() {
+        return new ResponseEntity(userService.groupAge(), HttpStatus.OK);
     }
 }
